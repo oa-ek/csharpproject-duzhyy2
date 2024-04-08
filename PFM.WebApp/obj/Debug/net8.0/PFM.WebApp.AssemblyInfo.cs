@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PFM.WebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8cc8bfd9685a721f17eca23c936f6268b4cd3e1b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76faf8069b8b13ce43af71d8e0368c2f9528f77c")]
 [assembly: System.Reflection.AssemblyProductAttribute("PFM.WebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PFM.WebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
