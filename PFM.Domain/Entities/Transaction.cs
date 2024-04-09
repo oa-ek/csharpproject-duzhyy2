@@ -9,8 +9,15 @@ public class Transaction : IBaseEntity<Guid>
     public decimal Amount { get; set; }
     public DateTime Date { get; set; }
     public string Note { get; set; }
+    
+    public Guid BillId { get; set; }
     public virtual Bill Bill { get; set; }
+    
+    public Guid CategoryId { get; set; }
     public virtual Category Category { get; set; }
+    
+    public Guid TransactionTypeId { get; set; }
     public virtual TransactionType TransactionType { get; set; }
+    
     public virtual AppUser AppUser { get; set; }
 }
