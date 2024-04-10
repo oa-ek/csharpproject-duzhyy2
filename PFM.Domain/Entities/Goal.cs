@@ -9,7 +9,9 @@ public class Goal : IBaseEntity<Guid>
     public decimal Amount { get; set; }
     public string Note { get; set; }
     public DateTime DateEnd { get; set; }
+    
     public Guid BillId { get; set; }
     public virtual Bill Bill { get; set; }
+    
     public virtual AppUser AppUser { get; set; }
 }

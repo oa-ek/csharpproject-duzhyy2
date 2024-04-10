@@ -1,0 +1,7 @@
+@model Guid
+
+<form asp-action="Delete" enctype="multipart/form-data">
+    <input type="hidden" value="@Model">
+    
+    <button class="btn btn-secondary" type="submit">Are you sure you want to remove?</button>
+</form>

@@ -1,0 +1,41 @@
+@model IEnumerable<Bill>
+
+@{
+    ViewData["Title"] = "Bills";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a href="/bill/create" class="text-success float-end">Create bill</a>
+
+<h1 class="mb-3">@ViewData["Title"]</h1>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-table table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Type</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <td>@c.Id</td>
+                    <td>@c.Title</td>
+                    <td>@Math.Round(c.Amount, 2)</td>
+                    <td>@c.Type.Title</td>
+                    <td class="text-center">
+                        <a href="/bill/edit/@c.Id" class="text-warning">Edit</a>
+                        <a href="/bill/delete/@c.Id" class="text-danger">Remove</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

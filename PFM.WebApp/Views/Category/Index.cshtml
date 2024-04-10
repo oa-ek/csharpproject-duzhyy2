@@ -1,0 +1,39 @@
+@model IEnumerable<Category>
+
+@{
+    ViewData["Title"] = "Categories";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a href="/category/create" class="text-success float-end">Create category</a>
+
+<h1 class="mb-3">@ViewData["Title"]</h1>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-table table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Type</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <td>@c.Id</td>
+                    <td>@c.Title</td>
+                    <td>@c.TransactionType.Title</td>
+                    <td class="text-center">
+                        <a href="/category/edit/@c.Id" class="text-warning">Edit</a>
+                        <a href="/category/delete/@c.Id" class="text-danger">Remove</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
