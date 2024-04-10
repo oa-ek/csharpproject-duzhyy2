@@ -20,6 +20,9 @@ public class MappingProfile : Profile
         CreateMap<DebtCreateDto, Debt>();
         CreateMap<DebtUpdateDto, Debt>();
         
+        CreateMap<GoalCreateDto, Goal>();
+        CreateMap<GoalUpdateDto, Goal>();
+        
         CreateMap<TransactionCreateDto, Transaction>();
         CreateMap<TransactionUpdateDto, Transaction>();
     }

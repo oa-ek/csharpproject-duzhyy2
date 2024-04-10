@@ -1,0 +1,45 @@
+@model IEnumerable<Goal>
+
+@{
+    ViewData["Title"] = "Goals";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-center mb-4">
+    <div class="col-md-8 col-12">
+        <a href="/goal/create" class="text-success fs-4">Create goal</a>
+        
+        <div class="card shadow-sm mt-3 mb-4 p-4">
+            <h1 class="text-center mb-3">@ViewData["Title"]</h1>
+
+            <div class="card-table table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Note</th>
+                        <th scope="col">Date end</th>
+                        <th scope="col">Bill</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var c in Model)
+                    {
+                        <tr>
+                            <td>@Math.Round(c.Amount, 2)</td>
+                            <td>@c.Note</td>
+                            <td>@c.DateEnd</td>
+                            <td>@c.Bill.Title</td>
+                            <td>
+                                <a href="/goal/edit/@c.Id" class="text-warning me-3">Edit</a>
+                                <a href="/goal/delete/@c.Id" class="text-danger">Remove</a>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
