@@ -10,6 +10,7 @@ using PFM.Persistence.Repositories.BillTypes;
 using PFM.Persistence.Repositories.Budgets;
 using PFM.Persistence.Repositories.Categories;
 using PFM.Persistence.Repositories.Debts;
+using PFM.Persistence.Repositories.Goals;
 using PFM.Persistence.Repositories.Transactions;
 using PFM.Persistence.Repositories.TransactionTypes;
 
@@ -32,6 +33,7 @@ public static class DependencyInjection
        services.AddScoped<IBudgetRepository, BudgetRepository>();
        services.AddScoped<ICategoryRepository, CategoryRepository>();
        services.AddScoped<IDebtRepository, DebtRepository>();
+       services.AddScoped<IGoalRepository, GoalRepository>();
        services.AddScoped<ITransactionRepository, TransactionRepository>();
        services.AddScoped<ITransactionTypeRepository, TransactionTypeRepository>();
        services.AddScoped<UserManager<AppUser>>();

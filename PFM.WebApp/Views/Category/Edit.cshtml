@@ -1,16 +1,24 @@
 @model Category
 
-<div class="card">
-    <div class="card-body">
-        <h1 class="text-center mb-3">Edit category</h1>
-        
-        <form asp-action="Edit">
-            <div class="form-floating mb-3">
-                <input asp-for="Title" value="@Model.Title" class="form-control" id="amount" placeholder="name@example.com">
-                <label for="amount">Title</label>
-            </div>
+@{
+    ViewData["Title"] = "Edit category";
+}
 
-            <button class="btn btn-lg btn-primary" type="submit">Submit</button>
-        </form>
+<div class="row justify-content-center mb-4">
+    <div class="col-md-6 col-12">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h1 class="text-center mb-3">Edit category</h1>
+
+                <form asp-action="Edit">
+                    <div class="form-floating mb-3">
+                        <input asp-for="Title" value="@Model.Title" class="form-control" id="amount" placeholder="name@example.com">
+                        <label for="amount">Title</label>
+                    </div>
+
+                    <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>

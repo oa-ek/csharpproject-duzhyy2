@@ -1,51 +1,57 @@
 @model Transaction
 
 @{
+    ViewData["Title"] = "Create transaction";
+    
     var bills = ViewBag.Bills as List<SelectListItem>;
     var types = ViewBag.Types as List<SelectListItem>;
     var categories = ViewBag.Categories as List<SelectListItem>;
 }
 
-<div class="card">
-    <div class="card-body">
-        <form asp-action="Create">
-            <div class="form-floating mb-3">
-                <input asp-for="Amount" class="form-control" id="amount" placeholder="name@example.com">
-                <label for="amount">Amount</label>
-            </div>
+<div class="row justify-content-center mb-4">
+    <div class="col-md-6 col-12">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <form asp-action="Create">
+                    <div class="form-floating mb-3">
+                        <input asp-for="Amount" class="form-control" id="amount" placeholder="name@example.com">
+                        <label for="amount">Amount</label>
+                    </div>
 
-            <div class="form-floating mb-3">
-                <input asp-for="Date" type="datetime-local" class="form-control" id="date">
-                <label for="date">Transaction Date</label>
-            </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Date" type="datetime-local" class="form-control" id="date">
+                        <label for="date">Transaction Date</label>
+                    </div>
 
-            <div class="form-floating mb-3">
-                <input asp-for="Note" class="form-control" id="note">
-                <label for="note">Note</label>
-            </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Note" class="form-control" id="note" placeholder="name@example.com">
+                        <label for="note">Note</label>
+                    </div>
 
-            <div class="form-floating mb-3">
-                <select asp-for="TransactionTypeId" asp-items="@(types)" class="form-select" id="types" aria-label="Floating label select example">
-                    <option value="0" selected="selected">- Select transaction type -</option>
-                </select>
-                <label for="types">Transaction types</label>
-            </div>
+                    <div class="form-floating mb-3">
+                        <select asp-for="TransactionTypeId" asp-items="@(types)" class="form-select" id="types" aria-label="Floating label select example">
+                            <option value="0" selected="selected">- Select transaction type -</option>
+                        </select>
+                        <label for="types">Transaction types</label>
+                    </div>
 
-            <div class="form-floating mb-3">
-                <select asp-for="TransactionTypeId" asp-items="@(categories)" class="form-select" id="categories" aria-label="Floating label select example">
-                    <option value="0" selected="selected">- Select category -</option>
-                </select>
-                <label for="categories">Categories</label>
-            </div>
+                    <div class="form-floating mb-3">
+                        <select asp-for="TransactionTypeId" asp-items="@(categories)" class="form-select" id="categories" aria-label="Floating label select example">
+                            <option value="0" selected="selected">- Select category -</option>
+                        </select>
+                        <label for="categories">Categories</label>
+                    </div>
 
-            <div class="form-floating mb-3">
-                <select asp-for="TransactionTypeId" asp-items="@(bills)" class="form-select" id="bills" aria-label="Floating label select example">
-                    <option value="0" selected="selected">- Select bill -</option>
-                </select>
-                <label for="bills">Bills</label>
-            </div>
+                    <div class="form-floating mb-3">
+                        <select asp-for="TransactionTypeId" asp-items="@(bills)" class="form-select" id="bills" aria-label="Floating label select example">
+                            <option value="0" selected="selected">- Select bill -</option>
+                        </select>
+                        <label for="bills">Bills</label>
+                    </div>
 
-            <button class="btn btn-lg btn-primary" type="submit">Submit</button>
-        </form>
+                    <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>

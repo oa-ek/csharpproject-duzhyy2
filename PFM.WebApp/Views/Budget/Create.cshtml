@@ -1,25 +1,33 @@
 @model Budget
 
 @{
+    ViewData["Title"] = "Create budget";
+    
     var types = ViewBag.Categories as List<SelectListItem>;
 }
 
-<div class="card">
-    <div class="card-body">
-        <form asp-action="Create">
-            <div class="form-floating mb-3">
-                <input asp-for="Amount" class="form-control" id="amount" placeholder="name@example.com">
-                <label for="amount">Amount</label>
-            </div>
+<div class="row justify-content-center mb-4">
+    <div class="col-md-6 col-12">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h1 class="text-center mb-3">Create budget</h1>
+                
+                <form asp-action="Create">
+                    <div class="form-floating mb-3">
+                        <input asp-for="Amount" class="form-control" id="amount" placeholder="name@example.com">
+                        <label for="amount">Amount</label>
+                    </div>
 
-            <div class="form-floating mb-3">
-                <select asp-for="CategoryId" asp-items="@(types)" class="form-select" id="types" aria-label="Floating label select example">
-                    <option value="0" selected="selected">- Select category -</option>
-                </select>
-                <label for="types">Category</label>
-            </div>
+                    <div class="form-floating mb-3">
+                        <select asp-for="CategoryId" asp-items="@(types)" class="form-select" id="types" aria-label="Floating label select example">
+                            <option value="0" selected="selected">- Select category -</option>
+                        </select>
+                        <label for="types">Category</label>
+                    </div>
 
-            <button class="btn btn-lg btn-primary" type="submit">Submit</button>
-        </form>
+                    <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>

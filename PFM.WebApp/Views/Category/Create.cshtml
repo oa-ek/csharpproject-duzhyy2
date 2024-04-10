@@ -1,25 +1,33 @@
 @model Category
 
 @{
+    ViewData["Title"] = "Create category";
+    
     var types = ViewBag.Types as List<SelectListItem>;
 }
 
-<div class="card">
-    <div class="card-body">
-        <form asp-action="Create">
-            <div class="form-floating mb-3">
-                <input asp-for="Title" class="form-control" id="title" placeholder="name@example.com">
-                <label for="title">Title</label>
-            </div>
+<div class="row justify-content-center mb-4">
+    <div class="col-md-6 col-12">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h1 class="text-center mb-3">Create category</h1>
+                
+                <form asp-action="Create">
+                    <div class="form-floating mb-3">
+                        <input asp-for="Title" class="form-control" id="title" placeholder="name@example.com">
+                        <label for="title">Title</label>
+                    </div>
 
-            <div class="form-floating mb-3">
-                <select asp-for="TransactionTypeId" asp-items="@(types)" class="form-select" id="types" aria-label="Floating label select example">
-                    <option value="0" selected="selected">- Select category type -</option>
-                </select>
-                <label for="types">Categories</label>
-            </div>
+                    <div class="form-floating mb-3">
+                        <select asp-for="TransactionTypeId" asp-items="@(types)" class="form-select" id="types" aria-label="Floating label select example">
+                            <option value="0" selected="selected">- Select category type -</option>
+                        </select>
+                        <label for="types">Categories</label>
+                    </div>
 
-            <button class="btn btn-lg btn-primary" type="submit">Submit</button>
-        </form>
+                    <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>

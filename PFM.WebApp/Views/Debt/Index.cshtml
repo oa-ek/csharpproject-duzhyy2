@@ -5,35 +5,37 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<a href="/debt/create" class="text-success float-end">Create debt</a>
+<div class="row justify-content-center mb-4">
+    <div class="col-md-8 col-12">
+        <a href="/debt/create" class="text-success fs-4">Create debt</a>
+        
+        <div class="card shadow-sm mt-3 mb-4 p-4">
+            <h1 class="text-center mb-3">@ViewData["Title"]</h1>
 
-<h1 class="mb-3">@ViewData["Title"]</h1>
-
-<div class="card shadow-sm mb-4">
-    <div class="card-table table-responsive">
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Amount</th>
-                <th scope="col">Note</th>
-                <th scope="col">Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach (var c in Model)
-            {
-                <tr>
-                    <td>@c.Id</td>
-                    <td>@Math.Round(c.Amount, 2)</td>
-                    <td>@c.Note</td>
-                    <td class="text-center">
-                        <a href="/debt/edit/@c.Id" class="text-warning">Edit</a>
-                        <a href="/debt/delete/@c.Id" class="text-danger">Remove</a>
-                    </td>
-                </tr>
-            }
-            </tbody>
-        </table>
+            <div class="card-table table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Note</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var c in Model)
+                    {
+                        <tr>
+                            <td>@Math.Round(c.Amount, 2)</td>
+                            <td>@c.Note</td>
+                            <td class="text-center">
+                                <a href="/debt/edit/@c.Id" class="text-warning me-3">Edit</a>
+                                <a href="/debt/delete/@c.Id" class="text-danger">Remove</a>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>

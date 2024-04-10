@@ -31,13 +31,15 @@
         </div>
     </nav>
 </header>
-<div class="container">
-    <main role="main" class="pb-3">
-        @RenderBody()
-    </main>
+<div class="d-flex flex-column">
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
 </div>
 
-<footer class="border-top footer text-muted">
+<footer class="border-top footer text-light bg-body text-center">
     <div class="container">
         &copy; <span id="footer-year"></span> - PFM - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
     </div>
