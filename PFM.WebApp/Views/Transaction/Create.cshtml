@@ -36,14 +36,14 @@
                     </div>
 
                     <div class="form-floating mb-3">
-                        <select asp-for="TransactionTypeId" asp-items="@(categories)" class="form-select" id="categories" aria-label="Floating label select example">
+                        <select asp-for="CategoryId" asp-items="@(categories)" class="form-select" id="categories" aria-label="Floating label select example">
                             <option value="0" selected="selected">- Select category -</option>
                         </select>
                         <label for="categories">Categories</label>
                     </div>
 
                     <div class="form-floating mb-3">
-                        <select asp-for="TransactionTypeId" asp-items="@(bills)" class="form-select" id="bills" aria-label="Floating label select example">
+                        <select asp-for="BillId" asp-items="@(bills)" class="form-select" id="bills" aria-label="Floating label select example">
                             <option value="0" selected="selected">- Select bill -</option>
                         </select>
                         <label for="bills">Bills</label>
